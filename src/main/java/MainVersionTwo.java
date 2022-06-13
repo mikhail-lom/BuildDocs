@@ -25,7 +25,41 @@ public class MainVersionTwo {
      * Метод построения изображения ромба
      */
     private static void printDiamond(int height, int width) {
-        char[][] bufferArray = new char[getCenter(height)][getCenter(width)];
+        class InnerArray {
+            private int arrayWidthLength;
+            private int arrayHeightLength;
+            private int widthCounter;
+            private int heightCounter;
+            char[][] bufferArray = new char[arrayHeightLength][arrayWidthLength];
+
+            InnerArray(int height, int width) {
+                setArrayHeightLength(height);
+                setArrayWidthLength(width);
+            }
+            void setArrayWidthLength(int width){
+                if (width % 2 == 1) {
+                    arrayWidthLength = (width/2) + 1;
+                    widthCounter = 0;
+                } else {
+                    arrayWidthLength = width/2;
+                    widthCounter = 1;
+                }
+
+
+            }
+
+            void setArrayHeightLength(int height){
+                if (height % 2 == 1) {
+                    arrayHeightLength = (height/2) + 1;
+                    heightCounter = 0;
+                } else {
+                    arrayHeightLength = height/2;
+                    heightCounter = 1;
+                }
+            }
+
+        }
+
 
         for (int i = 0; i < indexConverter(getCenter(height)); i++) {
             for (int j = 0; j < indexConverter(getCenter(width)); j++) {
