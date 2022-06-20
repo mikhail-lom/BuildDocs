@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Stack;
 
 public class MainVersionTwo {
 
@@ -25,53 +26,52 @@ public class MainVersionTwo {
      * Метод построения изображения ромба
      */
     private static void printDiamond(int height, int width) {
-        class InnerArray {
-            private int arrayWidthLength;
-            private int arrayHeightLength;
-            private int widthCounter;
-            private int heightCounter;
-            char[][] bufferArray = new char[arrayHeightLength][arrayWidthLength];
-
-            InnerArray(int height, int width) {
-                setArrayHeightLength(height);
-                setArrayWidthLength(width);
-            }
-            void setArrayWidthLength(int width){
-                if (width % 2 == 1) {
-                    arrayWidthLength = (width/2) + 1;
-                    widthCounter = 0;
-                } else {
-                    arrayWidthLength = width/2;
-                    widthCounter = 1;
-                }
 
 
-            }
-
-            void setArrayHeightLength(int height){
-                if (height % 2 == 1) {
-                    arrayHeightLength = (height/2) + 1;
-                    heightCounter = 0;
-                } else {
-                    arrayHeightLength = height/2;
-                    heightCounter = 1;
-                }
-            }
-
-        }
 
 
-        for (int i = 0; i < indexConverter(getCenter(height)); i++) {
-            for (int j = 0; j < indexConverter(getCenter(width)); j++) {
+         class Stack {
+             private char[] stck;//Queue items storage
+             private int tos;//insertion and extraction indices
 
-            }
-        }
+             //Creation of empty stack of defined size
+             Stack(int size) {
+                 stck = new char[size];//Memory allocation
+                 tos=0;
+             }
 
-        System.out.println();
+             //Create stack from another one
+             Stack(Stack ob) {
+                 tos = ob.tos;
+                 stck = new char[ob.stck.length];
+             }
 
+             //Create stack with initial values
+             Stack(char[] a){
+                 stck = new char[a.length];
 
-//        System.out.println("Высота вашего ромба: " + height);
-//        System.out.println("Ширина вашего ромба: " + width);
+                 for(int i=0; i < a.length; i++) {
+                     push(a[i]);
+                 }
+             }
+             /* Insertion of element to the stack */
+             void push(char ch){
+                 if (tos == stck.length) {
+                     System.out.println(" - Queue is full");
+                     return;
+                 }
+                 stck[tos++] = ch;
+             }
+
+             /*Extraction of element from the stack*/
+             char pop() {
+                 if(tos == 0) {
+                     System.out.println(" - Stack is empty");
+                     return (char) 0;
+                 }
+                 return stck[tos++];
+             }
+         }
 
     }
 

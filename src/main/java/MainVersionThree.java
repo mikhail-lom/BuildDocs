@@ -155,7 +155,7 @@ public class MainVersionThree {
 
     /**
      * Проверка на вхождение числа в определённый числовой ряд<br>
-     * По умолчанию <code>min = 0</code>
+     * По умолчанию <code>min = 1</code>
      *
      * @param value
      * @param max
