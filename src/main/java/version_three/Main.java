@@ -1,9 +1,11 @@
+package version_three;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-public class MainVersionThree {
+public class Main {
 
     public static void main(String[] args) throws IOException {
 
@@ -12,13 +14,13 @@ public class MainVersionThree {
 
         //Мой код получающий параметры с консоли
         System.out.println("Введите высоту ромба:");
-        height = MainVersionThree.checkInputValues();
+        height = Main.checkInputValues();
 
         System.out.println("Введите ширину ромба:");
-        width = MainVersionThree.checkInputValues();
+        width = Main.checkInputValues();
 
         System.out.println("\nВаш ромб:");
-        MainVersionThree.printDiamond(height, width);
+        Main.printDiamond(height, width);
 
     }
 

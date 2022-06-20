@@ -1,3 +1,5 @@
+package version_five;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -190,8 +192,8 @@ class DiamondStack extends Stack<String> {
      * Построение изображения первого ряда
      */
     public void createFirstRow() {
-//        if (this.size() <= Main.getCenter(diamondSize)) { // ограничиваем размер стека центром изображения
-//            if (this.size() == Main.getCenter(diamondSize)) { // записываем "#" в центральный символ
+//        if (this.size() <= version_five.Main.getCenter(diamondSize)) { // ограничиваем размер стека центром изображения
+//            if (this.size() == version_five.Main.getCenter(diamondSize)) { // записываем "#" в центральный символ
 //                this.push("#");
 //                System.out.print("#");
 //                finalString.concat("#");
